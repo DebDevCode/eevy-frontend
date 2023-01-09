@@ -38,15 +38,12 @@ const ModalBorneReservation = (props) => {
 
   const [modalChargeurReserved, setModalChargeurReserved] = useState(false);
 
-  const [modalDurationVisible, setModalDurationVisible] = useState(false);
   const [borneOwner, setBorneOwner] = useState(null);
   const [borneOwnerProfilPic, setBorneOwnerProfilPic] = useState(null);
   const [comments, setComments] = useState(null);
   const [modalCommentsVisible, setModalCommentsVisible] = useState(false);
-  const reservation = useSelector((state) => state.reservation.value);
   const [shoot, setShoot] = useState(false);
   const [soldeVisible, setSoldeVisible] = useState(false);
-  const [balance, setBalance] = useState(null);
   const [total, setTotal] = useState(null);
   const [from, setFrom] = useState(props.from);
   const [to, setTo] = useState(props.to);

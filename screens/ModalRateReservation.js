@@ -45,23 +45,6 @@ const ModalRateReservation = (props) => {
 
   props.isFavorite ? (iconFav = "heart") : (iconFav = "hearto");
 
-  const handleAddComment = () => {
-    fetch(`${BACKEND_URL}/users/addComment`, {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        token: user.token,
-        email: user.email,
-        ownerID: props.borneInfos.ownerId,
-        comment: comment,
-        rating: rate,
-        chargerId: props.borneInfos.charger,
-      }),
-    })
-      .then((res) => res.json())
-      .then(() => props.setModalRateVisible(!props.modalRateVisible));
-  };
-
   if (modalRateCommentVisible) {
     return (
       <ModalRateComment
